@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
 
-export function middleware(req: NextRequest) {
+export function middleware(req) {
   const basicAuth = req.headers.get('authorization');
   const url = req.nextUrl;
 
@@ -24,7 +23,6 @@ export function middleware(req: NextRequest) {
   });
 }
 
-// Configura en qué rutas quieres que aplique la contraseña (aquí aplica a todas)
 export const config = {
   matcher: '/:path*',
 };
